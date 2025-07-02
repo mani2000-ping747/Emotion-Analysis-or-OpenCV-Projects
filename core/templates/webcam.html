@@ -33,6 +33,11 @@
       width: 100%;
       margin-top: 20px;
     }
+    .or-divider {
+      margin: 30px 0 10px;
+      font-weight: bold;
+      color: #888;
+    }
   </style>
 </head>
 <body>
@@ -45,6 +50,10 @@
       <input type="file" class="form-control" name="image" accept=".jpg,.jpeg,.png" required>
       <button type="submit" class="btn btn-primary btn-upload">📊 Predict Emotion</button>
     </form>
+
+    <div class="or-divider">OR</div>
+
+    <a href="{% url 'predict_video' %}" class="btn btn-outline-secondary btn-upload">🎥 Upload Video Instead</a>
   </div>
 </div>
 
