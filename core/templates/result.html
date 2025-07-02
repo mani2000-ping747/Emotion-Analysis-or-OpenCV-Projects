@@ -1,12 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Prediction Result</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 60px;
+    }
+    .result-container {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    .emotion-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #198754;
+    }
+    .btn-try-again {
+      margin-top: 20px;
+    }
+  </style>
 </head>
-<body style="text-align: center;">
-  <h2>Detected Emotion: <span style="color:green;">{{ emotion }}</span></h2>
-  <img src="{{ image_url }}" alt="Result Image" width="400">
-  <br><br>
-  <a href="{% url 'index' %}">Try another image</a>
+<body>
+
+  <div class="container">
+    <div class="result-container">
+      <h2>🎯 Detected Emotion</h2>
+      <p class="emotion-text">{{ emotion }}</p>
+      <img src="{{ image_url }}" alt="Result Image" class="img-fluid rounded shadow-sm" width="400">
+      
+      <div class="btn-try-again">
+        <a href="{% url 'index' %}" class="btn btn-primary mt-3">🔁 Try Another Image</a>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
