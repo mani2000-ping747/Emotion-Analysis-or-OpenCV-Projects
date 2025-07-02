@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Result</title>
+</head>
+<body style="text-align: center;">
+  <h2>Detected Emotion: <span style="color:green;">{{ emotion }}</span></h2>
+  <img src="{{ image_url }}" alt="Result Image" width="400">
+  <br><br>
+  <a href="{% url 'index' %}">Try another image</a>
+</body>
+</html>

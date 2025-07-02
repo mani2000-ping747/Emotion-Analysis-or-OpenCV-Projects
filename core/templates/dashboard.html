@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Engagement Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>Emotion Breakdown</h2>
+  <canvas id="emotionChart" width="400" height="200"></canvas>
+
+  <h3>Engagement Score:</h3>
+  <ul>
+    {% for key, value in engagement_score.items %}
+      <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+  </ul>
+
+  <script>
+    const ctx = document.getElementById('emotionChart').getContext('2d');
+    const chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: {{ emotion_data.keys|safe }},
+            datasets: [{
+                label: 'Count',
+                data: {{ emotion_data.values|safe }},
+                backgroundColor: 'skyblue'
+            }]
+        }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Upload Classroom Video</title>
+</head>
+<body style="text-align: center;">
+  <h2>Upload Classroom Video for Emotion Detection</h2>
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="video" accept=".mp4,.avi,.mov" required><br><br>
+    <button type="submit">Upload & Process</button>
+  </form>
+</body>
+</html>

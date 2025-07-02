@@ -1,0 +1,11 @@
+<h2>My Uploaded Classroom Videos</h2>
+<ul>
+  {% for video in videos %}
+    <li>
+      {{ video.uploaded_at }} —
+      Detected: {{ video.detected_emotion }} —
+      <a href="{{ video.processed_video.url }}">View</a>
+    </li>
+  {% endfor %}
+</ul>
+<a href="{% url 'predict_video' %}">Upload New Video</a>
